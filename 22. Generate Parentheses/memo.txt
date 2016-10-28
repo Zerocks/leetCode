@@ -1,0 +1,40 @@
+給整數n 組出n個()可以做出的所有有效的排列組合
+
+解法 Recursive
+
+基本概念是每一種放法可能都會再產生額外兩種放法(但可能是無效的
+如
+n = 3 
+
+( -> () or ((
+() ->()( or ()), 後者無效
+()( -> ()() or ()((
+()() -> ()()() or ()())( , 後者無效
+()(( -> ()(())
+
+(( -> (() or (((
+(() -> (()( or (())
+(()( -> (()())
+(()) -> (())() or (()))(, 後者無效
+((( -> ((()))
+
+做出function genParent(int n , int left ,int right, String str, List result)
+給予n 作為判斷(的數量是否到上限
+left 代表放了幾個 (
+right 代表放了幾個 (
+str則是目前排到什麼狀況
+result則是結果的list
+
+
+    if(right==n){ //若 ) 放到底了 -> 代表結束，把結果放進list
+        rtnList.add(str);
+    }
+    else{
+        if(left < n){ // left還沒被用完
+            genParent(n,left+1,right,str+"("); //放一個 ( 繼續往下做
+        }
+
+        if(left>right){ // left > right 才是有效的狀況
+            genParent(n,left,right+1,str+")"); //放一個 ) 繼續往下做
+        }
+    }
