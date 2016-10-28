@@ -1,2 +1,2 @@
 # leetCode
-LeetCode練習
+LeetCode Practice
