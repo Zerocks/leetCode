@@ -1,4 +1,8 @@
-public class Solution {
+package main.Solution_164;
+
+import java.util.Arrays;
+
+public class Solution164 {
     public int maximumGap(int[] nums) {
         Arrays.sort(nums);
         int maxDif = 0;

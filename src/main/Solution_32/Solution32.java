@@ -1,4 +1,8 @@
-public class Solution {
+package main.Solution_32;
+
+import java.util.Stack;
+
+public class Solution32 {
     public int longestValidParentheses(String s) {
         int count = 0;
         int maxCount = 0;
@@ -23,16 +27,10 @@ public class Solution {
                 }
                 else{
                     // not paired
-                    if(maxCount<count){
-                        maxCount = count;
-                    }
                     count = 0;
                 }
             }
             else{
-                if(maxCount<count){
-                    maxCount = count;
-                }
                 count = 0;
             }
         }
