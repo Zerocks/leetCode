@@ -1,1 +1,4 @@
 merge sort and get median -> avg
+--
+Optimized
+有sort的話只要跑到一半就可以得到答案
